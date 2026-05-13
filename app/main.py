@@ -22,5 +22,5 @@ app.include_router(webhook_router)
 
 @app.get("/")
 def health() -> dict[str, str]:
-    """Cheap health check. Used by uptime monitors and `curl` during dev."""
+    """health check."""
     return {"status": "ok"}

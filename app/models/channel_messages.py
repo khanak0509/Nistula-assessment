@@ -75,11 +75,4 @@ class MessageFactory:
             allowed = ", ".join(sorted(cls._SOURCE_TO_CLASS.keys()))
             raise ValueError(f"Unknown source '{source}'. Expected one of: {allowed}")
 
-        return message_class(
-            source=source,
-            guest_name=str(payload.get("guest_name", "")),
-            message=str(payload.get("message", "")),
-            timestamp=str(payload.get("timestamp", "")),
-            booking_ref=payload.get("booking_ref"),
-            property_id=str(payload.get("property_id", "")),
-        )
+        return message_class(source=source, guest_name=str(payload.get("guest_name", "")), message=str(payload.get("message", "")), timestamp=str(payload.get("timestamp", "")), booking_ref=payload.get("booking_ref"), property_id=str(payload.get("property_id", "")))

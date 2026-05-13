@@ -29,13 +29,4 @@ class UnifiedMessage:
     @classmethod
     def from_channel_message(cls, channel_msg: BaseMessage) -> UnifiedMessage:
         """Convert a validated channel message into our internal schema."""
-        return cls(
-            message_id=uuid4(),
-            source=channel_msg.source,
-            guest_name=channel_msg.guest_name,
-            message_text=channel_msg.message,
-            timestamp=channel_msg.timestamp,
-            booking_ref=channel_msg.booking_ref,
-            property_id=channel_msg.property_id,
-            query_type=None,
-        )
+        return cls(message_id=uuid4(), source=channel_msg.source, guest_name=channel_msg.guest_name, message_text=channel_msg.message, timestamp=channel_msg.timestamp, booking_ref=channel_msg.booking_ref, property_id=channel_msg.property_id, query_type=None)

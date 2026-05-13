@@ -63,13 +63,7 @@ class AIService:
         )
 
         try:
-            response = self._client.messages.create(
-                model="claude-sonnet-4-20250514",
-                max_tokens=900,
-                temperature=0.4,
-                system=system,
-                messages=[{"role": "user", "content": user_prompt}],
-            )
+            response = self._client.messages.create(model="claude-sonnet-4-20250514", max_tokens=900, temperature=0.4, system=system, messages=[{"role": "user", "content": user_prompt}])
         except RateLimitError as exc:
             logger.warning("Anthropic rate limit: %s", exc)
             raise AIServiceError("The drafting service is temporarily busy") from exc

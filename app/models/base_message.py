@@ -11,18 +11,9 @@ from abc import ABC, abstractmethod
 from typing import Any
 
 
-class BaseMessage(ABC):
-    """Parent class for all incoming channel payloads."""
-
-    def __init__(
-        self,
-        source: str,
-        guest_name: str,
-        message: str,
-        timestamp: str,
-        booking_ref: str | None,
-        property_id: str,
-    ) -> None:
+class BaseMessage(ABC): #parent class for all incoming channel payloads
+    
+    def __init__(self, source: str, guest_name: str, message: str, timestamp: str, booking_ref: str | None, property_id: str) -> None:
         self.source = source
         self.guest_name = guest_name
         self.message = message
